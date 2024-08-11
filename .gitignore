@@ -3,6 +3,10 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# package.json
+package-lock.json
+yarn.lock
+
 # C extensions
 *.so
 
