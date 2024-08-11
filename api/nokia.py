@@ -78,6 +78,6 @@ def generate_image(text: str):
     sx, sy = image2.size
     origin_im.paste(image2, (px, py, px + sx, py + sy), image2)
     draw_subtitle(origin_im, f"{length}/900")
-    # origin_im.save("results/final.png", "png") Save as local file
+    #origin_im.save("results/final.png", "png") Save as local file
     return im_2_b64(origin_im)
 

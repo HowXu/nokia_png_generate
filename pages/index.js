@@ -10,7 +10,7 @@ const Home = () => {
     if (loading) return;
     setLoading(true);
     axios
-      .post("./api/nokia", {
+      .post("http://localhost:3001/api/nokia", {
         text
       })
       .then(res => {
