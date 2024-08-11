@@ -3,6 +3,13 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+#docker file
+Dockerfile
+traefik/Dockerfile
+api/Dockerfile
+docker-compose.prod.yaml
+.dockerignore
+
 # package.json
 package-lock.json
 yarn.lock
