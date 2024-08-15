@@ -6,12 +6,6 @@
 
 原作者很久没有更新，并且按照原作者README我的docker开不了(
 
-为python部分api的sanic服务器添加了cors策略(其实就两行T_T)，分开前端和后端的端口以保证可以在同一主机上使用
-
-## Demo picture: 
-
-![](./public/demo.png)
-
 ## 开发和部署
 
 环境要求:
@@ -19,38 +13,28 @@
 > Python 3.8.4\
 > Node >= 20.15.0
 
-### 后端服务器
+### 关于修改
 
-其在本地3001端口启动
+1. 原作者的docker-compose文件存在少许问题，在web配置的volumes上没有添加node_modules和next的构建目录，间接导致出现`sh:next not found`报错。  
+
+2. 原作者开发用的包括node和python的版本过低，有着一系列奇奇怪怪的报错。  
+
+3. 原作者在完全docker的环境下进行开发，使用了非常非常巧妙的traefik代理设置，因此**下一个开发者也必须docker环境开发**。即使物理机分别启动前端和后端，依然会报错。
+
+4. 原作者没有给python后端添加CORS，会导致后端的返回报错。
+
+### 开发模式(Dev Mode：Server and web client will be hot-reload)
 
 ```bash
-python api/main.py
+docker-compose up
 ```
 
-### 前端Web页面
+### 启动(Prod Mode)
 
-安装依赖：
 ```bash
-npm install 
+docker-compose -f docker-compose.prod.yaml up -d
 ```
 
-构建：
-```bash
-npm run build 
-```
+## Demo picture: 
 
-启动(访问本地3000端口)：
-```bash
-npm run start 
-```
-
-开发模式：
-```bash
-npm run dev 
-```
-
-更多参数说明和启动入口参见`package.json`和`api/main.py`文件
-
-## TODO
-
-原作者的Dockerfile文件会在不定时间之后出新版本
+![](./public/demo.png)

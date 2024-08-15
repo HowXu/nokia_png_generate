@@ -11,7 +11,7 @@ defaultEntryPoints = ["http"]
 [backends]
   [backends.api]
     [backends.api.servers.server1]
-      url = "http://api:3001"
+      url = "http://api:3000"
   [backends.web]
     [backends.web.servers.server1]
       url = "http://web:3000"
