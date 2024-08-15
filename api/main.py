@@ -19,4 +19,4 @@ async def index(request):
     return raw(generate_image(text))
 
     #这儿生成函数没有问题
-app.run(host="0.0.0.0", port=3001, debug=debug, workers=workers)
+app.run(host="0.0.0.0", port=3000, debug=debug, workers=workers)
