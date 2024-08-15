@@ -23,6 +23,8 @@
 
 4. 原作者没有给python后端添加CORS，会导致后端的返回报错。
 
+5. 添加Python和node下载镜像减少心智负担
+
 ### 开发模式(Dev Mode：Server and web client will be hot-reload)
 
 ```bash
